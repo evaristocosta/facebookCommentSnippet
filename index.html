@@ -15,25 +15,62 @@
   </head>
   <body>
     <main>
+      <div id="local"></div>
       <div id="capture" class="caixa-comentario">
-        <p class="nome">Daniella Faria</p>
-        <p class="comentario">
-          Muito esclarecedor tenho um filho no espectro é sempre bom aprender e
-          conhecer mais para poder ajudar no seu desenvolvimento ,obrigada.
-        </p>
+        <p class="nome" id="nome-comentador">Nome</p>
+        <p class="comentario" id="comentario-comentador">Comentário</p>
       </div>
 
       <div class="botao-gerar-imagem">
         <button onclick="gerar_imagem()">Criar imagem</button>
+      </div>
+
+      <div class="formulario">
+        <form
+          id="dados-comentario"
+          name="dados-comentario"
+          onsubmit="event.preventDefault(); alterar_comentario();"
+        >
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" />
+          </div>
+
+          <div>
+            <label for="comentario">Comentário</label>
+            <input type="text" name="comentario" id="comentario" />
+          </div>
+
+          <div>
+            <label for="tamanho">Tamanho</label>
+            <input type="number" name="tamanho" id="tamanho" />
+          </div>
+
+          <input type="submit" value="Gerar" />
+        </form>
       </div>
     </main>
   </body>
 
   <script src="html2canvas.min.js"></script>
   <script>
+    function alterar_comentario() {
+      var formulario = document.getElementById('dados-comentario');
+      var dadosFormulario = new FormData(formulario);
+
+      document.getElementById('capture').style.maxWidth =
+        dadosFormulario.get('tamanho') + 'px';
+
+      document.getElementById(
+        'nome-comentador'
+      ).innerHTML = dadosFormulario.get('nome');
+      document.getElementById(
+        'comentario-comentador'
+      ).innerHTML = dadosFormulario.get('comentario');
+    }
     function gerar_imagem() {
       html2canvas(document.querySelector('#capture')).then((canvas) => {
-        document.body.appendChild(canvas);
+        document.getElementById('local').appendChild(canvas);
       });
     }
   </script>

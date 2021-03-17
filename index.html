@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Comment Snippet</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <div id="capture" class="caixa-comentario">
+        <p class="nome">Daniella Faria</p>
+        <p class="comentario">
+          Muito esclarecedor tenho um filho no espectro é sempre bom aprender e
+          conhecer mais para poder ajudar no seu desenvolvimento ,obrigada.
+        </p>
+      </div>
+
+      <div class="botao-gerar-imagem">
+        <button onclick="gerar_imagem()">Criar imagem</button>
+      </div>
+    </main>
+  </body>
+
+  <script src="html2canvas.min.js"></script>
+  <script>
+    function gerar_imagem() {
+      html2canvas(document.querySelector('#capture')).then((canvas) => {
+        document.body.appendChild(canvas);
+      });
+    }
+  </script>
+</html>

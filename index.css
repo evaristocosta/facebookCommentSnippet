@@ -1,0 +1,33 @@
+.caixa-comentario {
+  background-color: #f0f2f5;
+  border-radius: 30px;
+  padding: 16px 24px;
+  max-width: 808px;
+  margin: 40px;
+  width: fit-content;
+}
+
+p {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  width: fit-content;
+}
+
+.caixa-comentario .nome {
+  color: #040404;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.caixa-comentario .comentario {
+  color: #050505;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.botao-gerar-imagem {
+  margin-top: 50px;
+}

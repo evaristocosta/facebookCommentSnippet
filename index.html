@@ -18,15 +18,14 @@
       <div id="local"></div>
       <div id="capture" class="comentario-geral">
         <div class="perfil">
-          <img
-            src="comentarios/francisca.jpg"
-            alt="imagem de perfil"
-          />
+          <img src="imagem.png" alt="imagem de perfil" />
         </div>
         <div class="caixa-comentario">
           <div class="comentador">
-            <p class="nome" id="nome-comentador">Francisca Wladiana Moreira</p>
-            <p class="comentario" id="comentario-comentador">Amo suas orientações Deus abençoe a senhora e toda sua família 🌾</p>
+            <p class="nome" id="nome-comentador">Marina Lima</p>
+            <p class="comentario" id="comentario-comentador">
+              Parabéns pelo ótimo trabalho, está me ajudando muito
+            </p>
           </div>
         </div>
       </div>
@@ -71,12 +70,10 @@
       document.getElementById('capture').style.maxWidth =
         dadosFormulario.get('tamanho') + 'px';
 
-      document.getElementById(
-        'nome-comentador'
-      ).innerHTML = dadosFormulario.get('nome');
-      document.getElementById(
-        'comentario-comentador'
-      ).innerHTML = dadosFormulario.get('comentario');
+      document.getElementById('nome-comentador').innerHTML =
+        dadosFormulario.get('nome');
+      document.getElementById('comentario-comentador').innerHTML =
+        dadosFormulario.get('comentario');
     }
     function gerar_imagem() {
       html2canvas(document.querySelector('#capture')).then((canvas) => {

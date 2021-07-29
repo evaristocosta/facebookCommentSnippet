@@ -1,3 +1,8 @@
 comentarios/
 comentarios/*
 estatico*
+*.jpg
+*.png
+*.gif
+*.jpeg
+!imagem.png
